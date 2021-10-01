@@ -1,0 +1,369 @@
+.header {
+    height: 12rem;
+    background-image: linear-gradient(to bottom, #A40000 0%, #CB4811 100%, #754918 100%);
+    opacity: 0.95;
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navbar-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+.header__navbar-item {
+    margin: 0 4px;
+    position: relative;
+    min-height: 20px;
+}
+
+.header__navbar-item--separate:hover .header__QR {
+    display: block;
+}
+
+.header__navbar-item--separate::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 16px;
+    background-color: aliceblue;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+}
+
+.header__navbar-item,
+.header__navbar-item-link {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.header__navbar-item-link,
+.header__navbar-item,
+.header__navbar-item-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.header__navbar-item:hover,
+.header__navbar-link-icon:hover,
+.header__navbar-item-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+.header__navbar-item--bold {
+    font-weight: 400;
+}
+
+.header__navbar-link-icon {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.header__navbar-icon {
+    font-size: 1.8rem;
+    margin: 0 4px;
+}
+
+.header__navbar-title--no-pointer {
+    cursor: text;
+    color: var(--white-color);
+}
+
+/*Header QR code */
+.header__QR {
+    background: var(--white-color);
+    width: 186px;
+    position: absolute;
+    left: 0;
+    top: 120%;
+    padding: 8px;
+    border-radius: 2px;
+    display: none;
+}
+
+.header__QR::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -14px;
+    left: 0;
+}
+
+.QR-img {
+    width: 100%;
+}
+
+.apps-download {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-download__link:first-child {
+    margin-left: 11px;
+}
+
+.app-download__link:last-child {
+    margin-right: 11px;
+}
+
+.apps-download__img {
+    height: 16px;
+}
+
+/* Notification */
+
+.header__notification {
+    margin-top: 10px;
+    position: absolute;
+    top: 110%;
+    width: 404px;
+    background-color: var(--white-color);
+    right: 0;
+    border: 1px solid #D3D3D3;
+    animation: headerNotificationGrow ease-in 0.25s;
+    transform-origin: calc(100% - 20px) top;
+    will-change: transform, opacity;
+    display: none;
+}
+
+.header__notification::before {
+    content: "";
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 1px;
+    top: -30px;
+    display: block;
+    cursor: default;
+}
+
+.header__notification::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    right: 0;
+    top: -17px;
+    height: 20px;
+    display: block;
+    cursor: default;
+}
+
+@keyframes headerNotificationGrow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.header__navbar-item--show:hover .header__notification{
+    display: block;
+}
+
+.header__notification-header {
+    height: 40px;
+    background-color: var(--white-color);
+}
+
+.header__notification-header h3 {
+    color: #999;
+    margin: 0 0 0 12px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 40px;
+    cursor: default;
+}
+
+.header__notification-list {
+    padding-left: 0;
+
+}
+
+.header__notification-item {
+    display: flex;
+}
+
+.header__notification-item:hover {
+    background-color: #f6f4f6;
+}
+
+.header__notification-item--viewed {
+    background-color: rgba(247, 61, 42, 0.1);
+}
+
+.header__notification-link {
+    display: flex;
+    width: 100%;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.header__notification-img {
+    width: 48px;
+    object-fit: contain;
+}
+
+.header__notification-info {
+    margin-left: 12px;
+}
+
+.header__notification-name {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--black-color);
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+
+.header__notification-description {
+    margin-top: 6px;
+    display: block;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    color: #756F6E;
+}
+
+.header__notification-footer {
+    display: flex;
+}
+
+.header__notification-footer-btn {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Authen modal */
+
+.auth-form {
+    width: 500px;
+}
+
+.auth-form__container {
+    padding: 0 32px;
+}
+
+.auth-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-form__heading {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.auth-form__switch-btn {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.auth-form__form {
+    
+}
+
+.auth-form__group {
+    margin: 8px 0;
+}
+
+.auth-form__input {
+    height: 40px;
+    width: 100%;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    outline: none;
+}
+
+.auth-form__input:focus {
+    border-color: #777;
+}
+
+.auth-form__aside {
+    margin-top: 18px;
+}
+
+.auth-form__policy-text {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 0 12px;
+}
+
+.auth-form__text-link {
+    text-decoration: none;
+    color: var(--primary-color)
+}
+
+.auth-form__controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+    margin-top: 100px;
+}
+.auth-form__controls-back {
+    margin-right: 8px;
+}
+
+.auth-form__socials {
+    background-color: #F5F5F5;
+    padding: 16px 36px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-form__socials--icon {
+    font-size: 1.8rem;
+}
+
+.auth-form__socials--facebook{
+    color: var(--white-color) !important;
+    background-color: #273555;
+}
+
+.auth-form__socials--facebook
+.auth-form__socials--icon {
+    color: var(--white-color);
+}
+
+.auth-form__socials-title {
+    margin: 0 32px;
+}
+
+.auth-form__socials--google {
+    background-color: var(--white-color);
+    color: #666;
+}
+
+
+
+
+
+
+
