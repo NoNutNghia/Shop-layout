@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #f73d2a;
+    --primary-color: #fa3c27;
     --white-color: #fff;
     --black-color: #000;
     --text-color: #333;
     --border-color: #dbdbdb;
     --navbar-height: 34px;
     --header-height: 120px;
-    --header-with-search-height: calc( var(--header-height) - var(--navbar-height) )
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height) )
 }
 
 * {
